@@ -2,9 +2,11 @@ package pl.marcindev.thymeleaflearn.model;
 
 import jakarta.validation.constraints.*;
 import lombok.Data;
+import pl.marcindev.thymeleaflearn.validation.CourseCode;
 
 @Data
 public class Customer {
+
     private String firstName;
 
     @NotNull(message = "is required")
@@ -18,5 +20,7 @@ public class Customer {
 
     @Pattern(regexp = "[a-zA-Z0-9]{5}", message = "only 5 chars/digits")
     private String postalCode;
+    @CourseCode()
+    private String courseCode;
 
 }
